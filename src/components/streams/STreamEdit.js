@@ -2,7 +2,7 @@ import React from 'react';
 
 const StreamEdit = () =>{
     return (
-        <div> Stream create</div>
+        <div> Stream Edit</div>
     )
 }
 
