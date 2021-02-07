@@ -1,5 +1,6 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
+import connect from 'react-redux';
 
 class StreamCreate extends React.Component {
     
@@ -48,6 +49,10 @@ const validate = formValues => {
         errors.description  = "You must enter a description"
     }
     return errors;
+}
+
+const mapStateToProps = (state) => {
+    return { state }
 }
 export default reduxForm({
     form: 'streamCreate',
