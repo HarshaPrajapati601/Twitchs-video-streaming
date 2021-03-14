@@ -15,4 +15,4 @@ export const signOut = () => {
 
 export const createStream = formValues => async dispatch => {
         streamAPI.post('/streams',formValues);
-    }
+    };
