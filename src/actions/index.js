@@ -2,6 +2,8 @@ import streamAPi from '../apis/streamAPi';
 import {CREATE_STREAM, SIGN_IN, SIGN_OUT, FETCH_ALL_STREAMS,
 EDIT_STREAM, DELETE_STREAM, FETCH_STREAM}  from './types';
 
+import history from '../history';
+
 export const signIn = (userId) => {
     return{
         type: SIGN_IN,
@@ -37,6 +39,9 @@ export const createStream = formValues => async (dispatch, getState) => {
         type: CREATE_STREAM,
         payload: response.data
     })
+    //do programatic navigation --go to route
+    //History refrences
+    history.push('/');
 };
 
 export const editStream = (id, formvalues) => async dispatch => {
