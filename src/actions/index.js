@@ -45,11 +45,12 @@ export const createStream = formValues => async (dispatch, getState) => {
 };
 
 export const editStream = (id, formvalues) => async dispatch => {
-    const response = await streamAPi.put(`/streams/${id}`, formvalues);
+    const response = await streamAPi.patch(`/streams/${id}`, formvalues);
     dispatch({
         type: EDIT_STREAM,
         payload: response.data
-    })
+    });
+    history.push('/');
 };
 
 export const deleteStream = id => async dispatch => {
